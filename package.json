@@ -17,7 +17,7 @@
     "package-mac": "npm run build && rm -rf release && build --mac --projectDir ./dist",
     "package-all": "npm run build && rm -rf release && build --mac --win --linux --projectDir ./dist",
     "hot-server": "cross-env NODE_ENV=development node -r babel-register scripts/dev.js",
-    "start-hot": "cross-env HOT=1 NODE_ENV=development electron2 -r babel-register -r babel-polyfill ./main",
+    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./main",
     "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\""
   },
   "author": {
@@ -56,8 +56,6 @@
       "category": "Chat",
       "executableName": "wewechat",
       "target": [
-        "deb",
-        "rpm",
         "AppImage"
       ]
     },
@@ -97,12 +95,13 @@
     "play-sound": "^1.1.1",
     "prop-types": "^15.6.0",
     "randomcolor": "^0.5.3",
-    "react": "^16.0.0",
+    "react": "^16.8.3",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.0.0",
     "react-masonry-component": "^6.2.1",
     "react-router-dom": "^4.2.2",
-    "tmp": "0.0.33"
+    "tmp": "0.0.33",
+    "webpack": "^4.29.5"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
